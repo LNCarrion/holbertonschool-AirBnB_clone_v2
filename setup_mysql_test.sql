@@ -1,16 +1,12 @@
--- Script that prepares a MySQL server for AirBnB Console v2
--- This script will create a database and a user for the AirBnB project
--- Create the database
-CREATE DATABASE IF NOT EXISTS hbnb_test_db;
+-- Setup mysql test database
 
--- Create the user if not exists
--- Create user in localhost identified by 'hbnb_test_pwd'
-CREATE USER IF NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED BY 'hbnb_test_pwd';
+-- Create database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS `hbnb_test_db`;
+-- Create user if it doesn't exist
+CREATE USER IF NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
+-- Grant privileges to user
+GRANT ALL PRIVILEGES ON `hbnb_test_db`.* TO 'hbnb_test'@'localhost';
+-- Grant SELECT privileges to new user on 'performance_schema' database
+GRANT SELECT ON `performance_schema`.* TO 'hbnb_test'@'localhost';
 
--- Grant all privileges on the database to the user
-GRANT ALL PRIVILEGES ON hbnb_test_db.* TO 'hbnb_test'@'localhost';
-Flush privileges;
-
--- Grant select privileges on performance_schema to the user
-GRANT SELECT ON performance_schema.* TO 'hbnb_test'@'localhost';
-Flush privileges;
+FLUSH PRIVILEGES;
