@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines the State class."""
 
+from sqlalchemy import Column, String
 from models.base_model import BaseModel, Base
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import relationship
