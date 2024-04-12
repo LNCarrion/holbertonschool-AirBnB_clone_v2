@@ -1,4 +1,5 @@
-"""This module defines the FileStorage class"""
+#!/usr/bin/python3
+"""This module defines a class to manage file storage for hbnb clone"""
 import json
 
 class FileStorage:
@@ -47,3 +48,4 @@ class FileStorage:
     def close(self):
         """Call reload() method for deserializing the JSON file to objects"""
         self.reload()
+>>>>>>> 7dec229b36a7573e937c1263a1aa885475f2649f
